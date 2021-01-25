@@ -1,0 +1,31 @@
+def strip(s):
+   news=''
+   ignore=set(',.-*! \n')
+   for letter in s:
+      if letter not in ignore:
+          news+=letter
+   return news
+
+      
+words=[strip(s) for s in words]
+print(words)
+print(len(words))
+
+words=[s.lower() for s in words]
+print(words)
+
+unique_words=set(words)
+print(unique_words)
+print(len(unique_words))
+
+
+word_frequency=dict()
+
+for u in unique_words:
+  word_frequency[u]=words.count(u)
+print(word_frequency)
+'''for f in word_frequency:
+  print(type(word_frequency[f]))'''
+
+frequent_words = {f:word_frequency[f] for f in word_frequency if word_frequency[f]>6}
+print(frequent_words)

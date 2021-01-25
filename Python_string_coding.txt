@@ -1,0 +1,355 @@
+'''
+Convert the entire string zenPython into a list of words. Capture the words in the list - words.
+
+Hint: Use split method of strings. You may type python3.5 to use the latest version for the exercise
+'''
+zenPython = '''
+
+The Zen of Python, by Tim Peters
+
+
+
+Beautiful is better than ugly.
+
+Explicit is better than implicit.
+
+Simple is better than complex.
+
+Complex is better than complicated.
+
+Flat is better than nested.
+
+Sparse is better than dense.
+
+Readability counts.
+
+Special cases aren't special enough to break the rules.
+
+Although practicality beats purity.
+
+Errors should never pass silently.
+
+Unless explicitly silenced.
+
+In the face of ambiguity, refuse the temptation to guess.
+
+There should be one-- and preferably only one --obvious way to do it.
+
+Although that way may not be obvious at first unless you're Dutch.
+
+Now is better than never.
+
+Although never is often better than *right* now.
+
+If the implementation is hard to explain, it's a bad idea.
+
+If the implementation is easy to explain, it may be a good idea.
+
+Namespaces are one honking great idea -- let's do more of those!
+
+'''
+
+
+#words=zenPython.split('\n')
+words=zenPython.split('')
+print(words)
+print(len(words))
+
+'''
+Now, remove the flanking characters (such as , . - * ! and space) from each of the word, present in list words.
+
+Store the obtained result again in the list words.
+Hint: Use List comprehensions and strip method of strings. You may type python3.5 to use the latest version for the exercise
+'''
+def strip(s):
+   news=''
+   ignore=set(',.-*! \n')
+   for letter in s:
+      if letter not in ignore:
+          news+=letter
+   return news
+
+      
+words=[strip(s) for s in words]
+print(words)
+print(len(words))
+
+words=[s.lower() for s in words]
+print(words)
+
+unique_words=set(words)
+print(unique_words)
+print(len(unique_words))
+
+
+word_frequency=dict()
+
+for u in unique_words:
+  word_frequency[u]=words.count(u)
+print(word_frequency)
+'''for f in word_frequency:
+  print(type(word_frequency[f]))'''
+
+frequent_words = {f:word_frequency[f] for f in word_frequency if word_frequency[f]>5}
+print(frequent_words)
+
+
+'''for u in word_frequency:
+  if u.value>5:
+    frequent_words[u.key]=u.value'''
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+'''
+Write a if-elif-else blocks to determine grade obtained by a student based on the total average obtained. Use the below criteria to determine the grade.
+
+if total average >= 90, display "Distinct"
+if in range [60 -90), display "Above average"
+if in range [40 -60), display "Average"
+else display "Fail"
+Also determine the grade of a student with average score 68.3
+'''
+'''a = -10 
+if a: 
+  print("a's value") 
+else: 
+  print("Sorry nothing will get printed")
+
+
+count = 0 
+while count < 2: 
+   print (count, " is less than 2")
+   count = count + 2 
+else: print (count, " is not less than 2")
+
+
+while False:
+  print('in while')
+else: print('in else')
+
+
+average=int(68.3)
+if average >= 90: 
+  print("Distinct")
+elif average in range(60,90): 
+  print("Above average")
+elif  average in range(40,60): 
+  print("Average")
+else :print("Fail")
+
+'''
+
+
+
+
+'''Consider the string 's' having the value 'tata consultancy services limited'
+
+Determine the no. of vowels present in it, using for loop. Store the number in variable 'count' and print it.
+'''
+'''
+s='tata consultancy services limited'
+count = 0
+vowels = set("aeiou")
+for letter in s:
+    if letter in vowels:
+        count += 1
+print(count)
+'''
+'''
+Consider the string 's' having the value 'tata consultancy services limited'
+
+Determine the no. of vowels present in it, using While loop. Store the number in variable 'count' and print it.
+'''
+'''
+s='tata consultancy services limited'
+count = 0
+vowels = set("aeiou")
+i=len(s)-1
+while i >= 0:
+  if s[i]in vowels:
+        count += 1
+  i-=1
+print(count)
+
+for letter in s:
+    if letter in vowels:
+        count += 1
+
+
+'''
+
+'''
+Create an empty Dictionary, 'd1' using 'dict' function
+print 'd1'
+Create a Dictionary 'd2' with Key values p-play , t-talk in the same order
+print 'd2'.
+Add two new key values : v-vibe, d-docs in the same order
+print 'd2'
+Remove the key value pair, 'v' - vibe, from 'd2'
+print 'd2'
+'''
+'''
+d1=dict()
+print(d1)
+d2=dict(p='play',t='talk')
+print(d2)
+d2['v']='vibe'
+d2['d']='docs'
+print(d2)
+del(d2['v'])
+print(d2)
+'''
+
+'''Create two sets 'a', and 'b' with following values.
+
+a = ('10','20','30','40')
+
+b = ('30','60')
+
+Determine the following
+
+Union; store the output in variable 'u' and print it.
+Intersection; store the output in variable 'i' and print it.
+Difference between set 'a' and 'b'; store the output in variable 'd' and print it.
+Symmetric difference; store the output in variable 'sd' and print it.
+'''
+'''
+a=set(('10','20','30','40'))
+b = set(('30','60'))
+u=a.union(b)
+print(u)
+i=a.intersection(b)
+print(i)
+d=a.difference(b)
+print(d)
+sd=a.symmetric_difference(b)
+print(sd)
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''Write a script to generate the following list of numbers using range.
+
+Generate the list 'k1' having first five natural numbers.
+Print 'k1'
+Generate the list 'k2' having five continuous numbers starting from 10.
+Print 'k2'
+Generate the list 'k3' having even numbers between 10 and 20 (including both of them too).
+Print 'k3'
+Generate the list 'k4' having numbers from 100 to 1 in decreasing order, which are also multiple of 25.
+Print 'k4'
+'''
+'''k1=list(range(1,6))
+print(k1)
+k2=list(range(10,15))
+print(k2)
+k3=list(range(10,21,2))
+print(k3)
+k4=list(range(100,0,-1*25))
+print(k4)
+'''
+
+
+
+
+
+
+
+
+
+
+'''Create a list 'k' having seven characters from 'a' to 'g'. Perform the following tasks and print the outputs in separate lines.
+
+Print alternative characters, using slicing option, starting from 'a'.
+Print alternative characters among the first 4 elements alone
+Print only the odd indexed elements of list 'k'
+'''
+'''k=['a','b','c','d','e','f','g']
+print(k[::2])
+print(k[:4:2])
+print(k[1::2])'''
+
+
+
+
+
+
+
+'''Create an empty tuple 'tup1' using tuple operation.
+Print 'tup1'
+Create another tuple 'tup2', by passing 'Welcome' string as argument to tuple function.
+Print 'tup2'
+Find and print the count of character 'e' in 'tup2'.
+Determine the index of character 'e' in 'tup2' and print it.
+Find the length of tuple 'tup2' and print it.'''
+'''
+tup1=()
+print(tup1)
+tup2=('Welcome')
+print(tup2)
+print(tup2.count('e'))
+print(tup2.index('e'))
+print(len(tup2))
+
+'''
+
+
+
+
+
+'''s="INfinity"
+print(s.isalpha())
+print(s.isdigit())
+print(len(s))
+print(s.upper())
+print(s.lower())
+print(s.count('i'))
+print(s.index('t'))'''
+
+'''Create an empty list 'emplist1' using list operation.
+Print 'emplist1'
+Append to empty list 'emplist1' created above with element 9.
+Append another element 10 to 'emplist1'
+Print 'emplist1'
+Create an empty list 'emplist2' using [].
+Print 'emplist2'
+Extend the empty list 'emplist2' created above with elements 'a', 'b', 'c'.
+Print 'emplist2'
+Extract the last element of 'emplist2' and assign it to variable 'e'.
+Print 'emplist2'
+Print the variable 'e'.
+emplist1=[]
+print(emplist1)
+emplist1.append(9)
+emplist1.append(10)
+print(emplist1)
+emplist2=[]
+print(emplist2)
+emplist2.extend(['a', 'b', 'c'])
+print(emplist2)
+e=emplist2[2]
+print(emplist2)
+print(e)'''

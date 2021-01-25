@@ -1,0 +1,93 @@
+Node JS Frescoplay:
+
+1) Addition Example:
+
+const argumentList = process.argv;
+const addThese = argumentList.slice(2,argumentList.length);
+
+let sum = 0;
+let solution = addThese.forEach((value) => {
+  // convert to a number
+  sum += Number(value);
+  return sum;
+});
+
+console.log("The sum = " + sum);
+
+2) Timer 1
+
+timers1 => {
+console.log("TCS"); 
+}
+setInterval(timers1,5000);
+
+3) Timer 2
+
+timers1 => {
+console.log("TCS");
+}
+setTimeout(timers1,2000);
+
+4) Timer 3
+
+timers3 => {
+console.log("TCS");
+}
+stopTimer => {
+clearInterval(newInterval);
+}
+
+
+
+5) Explore Modules:
+
+module.js:
+------------------
+const readline = require('readline');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output:process.stdout
+  });
+
+add => {
+  rl.question('Enter First Number',(number1) => {
+  rl.question('Enter Second Number',(number2) => {
+  console.log('Addition of Given Number Is:' + (Number(number1)+Number(number2)));
+  rl.close();
+  });
+});
+}
+
+multiply => {
+  rl.question('Enter First Number',(number1) => {
+  rl.question('Enter Second Number',(number2) => {
+  console.log('Mulptication of Given Number Is: '+ (Number(number1)*Number(number2)));
+  rl.close();
+  });
+});
+}
+
+module.exports.add=add;
+module.exports.multiply=multiply;
+
+app.js:
+--------------------
+
+const modules = require('./modules');
+modules.add();
+modules.multiply();
+
+
+var newInterval = setInterval(timers3,2000);
+
+setTimeout(stopTimer,10000); 
+
+5) Call  back Functions
+
+var sum =0;
+for (var i = 0; i < numbers.length; i++) {
+  sum += numbers[i]
+}
+console.log(sum);
+
+6)	
